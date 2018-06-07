@@ -83,7 +83,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom_server___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom_server__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__client_App__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__client_Html__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__client_Html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__client_Html__);
 
 
 
@@ -94,15 +93,12 @@ const port = 3000;
 const server = __WEBPACK_IMPORTED_MODULE_0_express___default()();
 
 server.get('/', (req, res) => {
-  /**
-   * renderToString() will take our React app and turn it into a string
-   * to be inserted into our Html template function.
-   */
+
   const element = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__client_App__["a" /* default */], null);
   const body = Object(__WEBPACK_IMPORTED_MODULE_2_react_dom_server__["renderToString"])(element);
   const title = 'Server side Rendering with Styled Components';
 
-  res.send(__WEBPACK_IMPORTED_MODULE_4__client_Html___default()({
+  res.send(Object(__WEBPACK_IMPORTED_MODULE_4__client_Html__["a" /* default */])({
     body,
     title
   }));
@@ -142,9 +138,28 @@ const App = () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+/**
+ * Html
+ * This Html.js file acts as a template that we insert all our generated
+ * application code into before sending it to the client as regular HTML.
+ * Note we're returning a template string from this function.
+ */
+const Html = ({ body, title }) => `
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>${title}</title>
+    </head>
+    <body style="margin:0">
+      <div id="app">${body}</div>
+    </body>
+  </html>
+`;
 
+/* harmony default export */ __webpack_exports__["a"] = (Html);
 
 /***/ })
 /******/ ]);
