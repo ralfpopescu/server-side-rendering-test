@@ -23,19 +23,23 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [
+    rules: [
+      {
+      test: /\.(png|svg|jpg|gif)$/,
+      use: 'file-loader'
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-                presets: ['react']
+                presets: ['react', 'es2015']
             }
       },
       {
         test: /\.jsx$/,
         loader: 'babel-loader',
         query: {
-                presets: ['react']
+                presets: ['react', 'es2015']
             }
       }
     ]

@@ -4,14 +4,14 @@
  * application code into before sending it to the client as regular HTML.
  * Note we're returning a template string from this function.
  */
-const Html = ({ body, title }) => `
+const Html = ({ body, title, puzzle }) => `
   <!DOCTYPE html>
   <html>
     <head>
       <title>${title}</title>
     </head>
     <body style="margin:0">
-      <div id="app">${body}</div>
+      <div id="body">${body}</div>
     </body>
   </html>
 `;

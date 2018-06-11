@@ -7,6 +7,8 @@ import Html from './client/Html';
 const port = 3000;
 const server = express();
 
+server.use(express.static('dist'))
+
 server.get('/', (req, res) => {
 
   const element = <App />;

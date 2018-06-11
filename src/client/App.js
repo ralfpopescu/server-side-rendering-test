@@ -1,5 +1,6 @@
 import React from 'react';
+import Puzzle from './components/Puzzle'
 
-const App = () => <div>HI</div>;
+const App = () => <Puzzle />;
 
 export default App;
